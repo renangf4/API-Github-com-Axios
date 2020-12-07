@@ -1,25 +1,37 @@
+const axios = require('axios');
+
 let output = document.querySelector('.output');
 
-function search(){
-    let input = document.querySelector('.input').value;
+let search = document.querySelector('.search');
+
+search.onclick = function(){
+    let input = document.querySelector('#input').value;
     output.innerHTML = `
-        Carregando...
+        <div class="text-center">
+            <div class="spinner-border text-dark mx-auto" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
     `;
+    search.disabled = true;
     axios.get('https://api.github.com/users/' + input)
     .then(response => {
         output.innerHTML = `
-            Login: ${response.data.login}<br>
-            Avatar: <img src="${response.data.avatar_url}"><br>
-            Nome: ${response.data.name}<br>
-            Biografia: ${response.data.bio}<br>
-            Github: <a href="${response.data.html_url}">${response.data.html_url}</a><br>
-            ID: ${response.data.id}<br>
-            Localização: ${response.data.location}
+            <img src="${response.data.avatar_url}" class="rounded-circle d-block mx-auto mb-3 img-fluid">
+            <p>            
+                <b>User Name:</b> ${response.data.login}<br>
+                <b>Name:</b> ${response.data.name}<br>
+                <b>Biography:</b> ${response.data.bio}<br>
+                <b>Github:</b> <a href="${response.data.html_url}" target="_blank">${response.data.html_url}</a><br>
+                <b>Location:</b> ${response.data.location}
+            </p>
         `;
+        search.disabled = false;
     }).catch(error => {
+        search.disabled = false;
         if (error.response.status === 404) {
             output.innerHTML = `
-                Usuário não encontrado
+                <p class="text-danger">Usuário não encontrado</p>
             `;
         }
     });

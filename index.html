@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>img{width: 100px;}</style>
+    <link rel="stylesheet" href="./public/css/app.css">
 </head>
 <body>
-    <div id="app">
-        <input type="text" placeholder="Nome" class="input">
-        <button onclick="search()">Buscar</button>
-        <div class="output"></div>
+    <div id="app" class="pt-5">
+        <div class="container">
+            <h1 class="text-center mb-3">Search User GitHub</h1>
+            <div class="form-inline d-flex flex-nowrap justify-content-center">
+                <label for="input" class="sr-only">User Name</label>
+                <input type="text" placeholder="User Name" class="form-control mr-2" aria-label="User Name" id="input">
+                <button class="search btn btn-outline-dark my-2 my-sm-0">Search</button>
+            </div>
+            <div class="output py-5"></div>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./app.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <script src="./public/js/app.js"></script>
 </body>
 </html>
