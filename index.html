@@ -2,23 +2,30 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Consumo da API disponibilizada pelo GitHub utilizando Axios">
+    <meta name="keywords" content="api, git, hub, github, axios, web, renan, morais, renan morais">
+    <meta name="robots" content="index, follow">
+    <link rel="shortcut icon" href="public/img/favicon.png" />
+    <title>API GitHub com Axios - Renan Morais</title>
     <link rel="stylesheet" href="./public/css/app.css">
 </head>
 <body>
     <div id="app" class="pt-5">
         <div class="container">
-            <h1 class="text-center mb-3">Search User GitHub</h1>
+            <h1 class="text-center mb-3">Buscar usuário do GitHub</h1>
             <div class="form-inline d-flex flex-nowrap justify-content-center">
-                <label for="input" class="sr-only">User Name</label>
-                <input type="text" placeholder="User Name" class="form-control mr-2" aria-label="User Name" id="input">
-                <button class="search btn btn-outline-dark my-2 my-sm-0">Search</button>
+                <label for="input" class="sr-only">Usuário</label>
+                <input type="text" placeholder="Usuário" class="form-control mr-2" aria-label="Usuário" id="input">
+                <button class="search btn btn-outline-dark my-2 my-sm-0">Buscar</button>
             </div>
             <div class="output py-5"></div>
         </div>
     </div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <footer style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; padding: 8px; background: #f1f1f1;">
+        <p style="margin: 0; font-size: 16px;">Criado por <a href="http://renanmorais.online" target="_blank">Renan Morais</a></p>
+    </footer>
     <script src="./public/js/app.js"></script>
 </body>
 </html>

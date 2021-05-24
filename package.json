@@ -12,7 +12,8 @@
     "devDependencies": {
         "axios": "^0.18",
         "lodash": "^4.17.5",
-        "sass": "^1.26.2"
+        "sass": "^1.26.2",
+        "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
         "bootstrap": "^4.4.1",
